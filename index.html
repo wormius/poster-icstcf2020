@@ -10,11 +10,11 @@
     <div id="presentation">
         <h1>ICSTCF2020 Poster format contribution</h1>
         <h2>by Diego I. Garrido-Arguirre and José A. Moreno-Razo</h2>        
-        <!-- <p>
+        <p>
             This is an interactive and animated version of the poster. 
             If you prefer a downloadable 
-            static version, <a href="#">click here</a>.
-        </p> -->
+            static version, <a href="src/poster.png">click here</a>.
+        </p>
     </div>
     <div id="poster">
         <div id="header">
@@ -84,11 +84,13 @@
                         each with their own separate memory. <br>
                         <br> CUDA threads may access data from multiple memory spaces during their execution, for example:</p>
                     <h2>Local Memory</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                    <p>
+                        Accessible only by the thread itself
+                    </p>
                     <h2>Shared Memory</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                    <p>Accessible to all threads within the same block</p>
                     <h2>Global Memory</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                    <p>Accesible para todos los bloques.</p>
                 </div>
                 <div class="s4">
                     <h1>CUDA Grid</h1>
