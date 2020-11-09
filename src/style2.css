@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(30, 30, 30);   
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #1c282d;
+}
+
+img{
+    max-width: 100%; /*hace que todas las imagenes sean responsivas*/
+}
+
+/****** MAIN HEADER ******/
+#presentation {
+    /* background-color: darkgray; */
+    color: rgb(0, 216, 126);
+    width: 1200px;
+    margin: 4rem auto;
+}
+
+#presentation h1, h2, h3 {
+    text-align: center;
+}
+
+#presentation h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin: 0 auto 0.8rem auto;
+}
+
+#presentation h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 auto 0.2rem auto;
+}
+
+#presentation h3 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#presentation p {
+    color: rgb(50, 79, 81);
+    margin: 4rem 0;
+    padding: 3rem 15rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+#presentation p a{
+    font-weight: 500;
+    color:  rgb(56, 85, 87);
+   
+}
+
+#presentation p a:hover{
+    font-weight: 500;
+    color: rgb(230, 255, 235);
+}
+
+/***** POSTER HEADER *****/
+#poster {
+    width: 1200px;
+    margin: 4rem auto;
+    
+}
+#header {
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px 10px 0px 0px;
+    padding: 1rem;
+}
+
+#header h1 {
+    color: rgb(28, 212, 31);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+}
+
+#header h2 {
+    color: rgb(51, 140, 33);
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+#header h3 {
+    color: rgb(59, 91, 53);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/*******  POSTER BODY  ********/
+#body {
+    background-color: white;
+    padding: 1.9rem;
+    line-height: 1.5rem;
+    
+}
+
+#seccion1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+#seccion1 .s1{
+    width: 75rem;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#seccion1 .s12 {
+    text-align: center;
+    color: rgb(48, 48, 48);
+}
+
+#seccion1 .s12 img{
+    width: 150px;
+}
+
+#seccion1 .s12 h1{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;   
+}
+
+#seccion1 .s12 p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    
+}
+
+
+/*******  SECCION 2 *******/
+
+#seccion2 {
+    display: flex;
+    justify-content: space-between;    
+    padding-top: 3rem;
+    width: 900px;
+    margin: 3rem auto; 
+}
+
+#seccion2 h1 {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 2rem 0;
+}
+
+
+#seccion2 .s21 p:last-child {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-top: 3rem;
+    line-height: 3rem;
+    color: rgb(27, 48, 42);
+}
+
+
+#seccion2 p {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#seccion2 .s2 { 
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  
+    
+}
+
+
+#seccion2 .s21 {
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    color: rgb(69, 69, 69);
+   
+    
+}
+#seccion2 .s21 img {
+    width: 200px;
+}
+
+#seccion2 .s21 #particles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+   
+}
+
+
+/****** SECCION 3 *****/
+
+#seccion3 {
+    padding-top: 7rem;
+    padding-bottom: 1.5rem;
+    margin: 0rem 0rem 4rem 0px;
+}
+
+#seccion3 p{
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+#seccion3 p img {
+    width: 40rem;  
+}
+#seccion3 h1{
+    font-size: 5rem;
+    font-weight: 200;
+    padding: 1rem;
+    color: rgb(184, 255, 177);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#seccion3 p {
+    padding: 0rem 10rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgb(105, 116, 115);
+}
+
+
+/***** SECCION 4 ******/
+
+#seccion4 {
+    display: flex;    
+    align-items: center;
+    padding: 3rem;
+    background-color: rgb(29, 32, 39);
+    border-radius: 0.7rem;
+    color: whitesmoke;
+}
+
+#seccion4 .s40{
+    
+    padding:1rem;
+    text-align: left;
+    line-height: 1.5;
+    border-style: solid;
+    border-radius: 0.8rem;
+    color: turquoise;
+    max-width: 400px;
+}
+
+#seccion4 .s40 h1{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+#seccion4 .s40 p {
+    text-align: justify;
+    padding-bottom: 1.5rem;
+}
+#seccion4 .s40 h2{
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+#seccion4 .s4 {
+    text-align: center;
+    padding-left: 2.5rem;
+}
+
+#seccion4 .s4 h1{
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+#seccion4 .s4  img{
+    width: 100px;
+}
+
+#seccion4 .s41 div{
+    text-align: center;
+    margin: 3rem auto;
+}
+#seccion4 .s4 div p {
+    text-align: center;
+}
+#seccion4 .s41 div h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem;
+}
+
+#seccion4 .s42 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#seccion4 .s42 div{
+    text-align: center;
+    max-width: 300px;
+}
+#seccion4 .s42 div h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+/******* SECCION 5 *******/
+#seccion5 {
+    margin-top: 4rem;    
+}
+
+#seccion5 h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 5rem;
+    font-weight: 200;
+    color: rgb(184, 255, 177);
+}
+
+#seccion5 .visor {
+    text-align: center;
+    border-radius: 0.7rem;
+    border-style: solid;
+    border-color: rgb(147, 229, 192);
+}
+
+#seccion5 h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+
+}
+
+#seccion5 img {
+    margin: 2rem 0;
+    width: 600px;
+    
+}
+
+#seccion5 > p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 3rem auto;
+    padding: 1rem;
+    line-height: 2rem;
+    
+    text-align: justify;
+    background-color: rgb(225, 240, 253);
+    
+}
+
+#seccion5 .visor p {
+    font-size: 1.2rem;
+    line-height: normal;
+    font-weight: 380;
+    margin-bottom: 1rem;
+    padding: 0px 200px;
+    
+}
+
+#coolbtncontainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    margin: 1rem 0;
+}
+
+#coolbtncontainer strong {
+  display: block;
+  font-size: 2rem;
+}
+
+#coolbtncontainer  button {
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+    font-weight: 800;
+    font-size: 2rem;
+    border-radius: 0.7rem;
+    border-color: transparent;
+}
+
+#btnA {
+    background-color: rgb(74, 217, 88);
+}
+
+#btnAe {
+    background-color: rgb(255, 60, 0);
+}
+
+#btnB {
+    background-color: rgb(247, 255, 6);
+}
+
+#btnBe {
+    background-color: rgb(255, 116, 209);
+}
+
+#btnC {
+    background-color: rgb(153, 217, 224);
+}
+
+#btnD {
+    background-color: rgb(156, 56, 16);
+}
+
+
+#coolbtncontainer  button:hover {
+    background-color: rgb(110, 113, 109);
+    cursor: pointer;
+    
+}
+
+
+/***** SECCION 6 ******/
+
+#seccion6{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin: 10rem 0 3rem 0;
+}
+
+#seccion6 div:first-child {
+    text-align: center;
+    overflow: hidden;
+}
+
+#seccion6 div:last-child {
+    padding: 0rem 3rem;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+#seccion6 div img {
+    width: 600px;
+}
+
+#seccion6 div h1{
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+/***** POSTER FOOTER *****/
+
+#footer {
+    background-color: rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 10px;
+    padding: 1.9rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+#footer h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgb(28, 212, 31);
+    padding-bottom: 1rem;
+}
+
+#footer ul li {
+    color: rgb(51, 140, 33);
+}

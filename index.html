@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style2.css">
+    <title>ICSTCF2020 Poster</title>
+</head>
+<body>
+    <div id="presentation">
+        <h1>ICSTCF2020 Poster format contribution</h1>
+        <h2>by Diego I. Garrido-Arguirre and José A. Moreno-Razo</h2>        
+        <!-- <p>
+            This is an interactive and animated version of the poster. 
+            If you prefer a downloadable 
+            static version, <a href="#">click here</a>.
+        </p> -->
+    </div>
+    <div id="poster">
+        <div id="header">
+            <h1>GPU-Acceleration of force decomposition in molecular dynamics</h1>
+            <h2>Diego I. Garrido-Arguirre and José A. Moreno-Razo</h2>
+            <h3>Departamento de Física, Universidad Autónoma Metropolitana-Iztapalapa</h3>
+        </div>
+        <div id="body">
+            <div id="seccion1">
+                <div class="s1">
+                    <img src="src/sm.svg" alt="">
+                </div>
+                <div class="s12">
+                    <div>
+                        <img src="src/mdanim.gif" alt="">
+                    <h1>Molecular dynamics</h1>
+                    <p>A representative method with this approach is called "molecular dynamics simulation". 
+                        In this method, the motion of the particles is calculated from Newton’s equation of 
+                        motion in the classical theory.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="seccion2">
+                <div class="s21">
+                    <img id="forcematriximg" src="src/pfm01.png" alt="">
+                    <div id="particles">
+                        <strong>Particles: </strong>
+                        <div><input type="radio" name="fmradio" value="1" checked><span> 2</span></div>
+                        <div><input type="radio" name="fmradio" value="2"><span> 4</span></div>
+                        <div><input type="radio" name="fmradio" value="3"><span> 8</span></div>
+                        <div><input type="radio" name="fmradio" value="4"><span> 16</span></div>
+                        <div><input type="radio" name="fmradio" value="5"><span> 32</span></div>
+                    </div>
+                    <h1>Force matrix</h1>
+                    <p>
+
+                        Let’s call <em>matrix force</em> to a matrix with <b>N</b> rows and <b>N</b> columns, 
+                        where each element in the row <b><em>i</em></b> and column <b><em>j</em></b> contains the value of the force 
+                        <b><em>f<sub>ij</sub></em></b> due to the interaction between particle <b><em>i</em></b> 
+                        and particle <b><em>j</em></b> of a system with <b>N</b> particles.
+                        <br>
+                    </p>
+                    <p>
+                        The calculation of the forces, consequence of particle’s interactions, 
+                    is a crucial and time-expensive step in any molecular simulation. <span>As the number 
+                        of particles increases, the number of interactions does quadratically.</span>
+                    </p>
+                    
+                </div>
+            </div>
+            <div id="seccion3">
+                
+                <p><img src="src/cpugpu.gif" alt=""></p>
+                <h1>About CUDA</h1>
+                <p> The CUDA technology for NVIDIA graphics cards provides
+                    a development interface to make programs that take advantage of
+                    the GPU’s processor calculation capacity. The CUDA architecture allows 
+                    to implement functions (called kernels) to be executed by several 
+                    threads simultaneously.
+                </p>
+            </div>
+            <div id="seccion4">
+                <div class="s40">
+                    <h1>CUDA Memory spaces</h1>
+                    <p>The CUDA programming model assumes a system composed of a host (cpu) and a device (gpu), 
+                        each with their own separate memory. <br>
+                        <br> CUDA threads may access data from multiple memory spaces during their execution, for example:</p>
+                    <h2>Local Memory</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                    <h2>Shared Memory</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                    <h2>Global Memory</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque quia, esse minus ipsa veritatis</p>
+                </div>
+                <div class="s4">
+                    <h1>CUDA Grid</h1>
+                    <div class="s41">
+                        <div>
+                            <img src="src/thread.png" alt="">
+                            <h2>Threads</h2>
+                            <p>
+                                In CUDA, the kernel is executed with the aid of threads. The thread is an abstract entity that 
+                                represents the execution of the kernel. A kernel is a small program or a function. Every thread 
+                                has an index, which is used for calculating memory address locations and also for taking control 
+                                decisions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="s42">
+                        <div>
+                            <img src="src/block.png" alt="">
+                            <h2>Blocks</h2>
+                            <p>Threads are grouped into thread blocks. There is a limit to the number of threads per block, since all threads of a block are expected to reside on the same processor core and must share the limited memory resources of that core.</p>
+                        </div>
+                        <div>
+                            <img src="src/grid.png" alt="">
+                            <h2>Grid</h2>
+                            <p>
+                                Blocks are organized into a one-dimensional, two-dimensional, or three-dimensional grid of thread blocks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="seccion5">
+                <h1>Our work</h1>
+                <p>
+                    We created a set of algorithms to calculate,
+on the GPU, the matrix force for systems with different numbers
+of particles. These algorithms were compared with each other.
+and against other that does the same procedure but executed on
+the CPU. <br>
+Only two computational optimizations were implemented for
+the CPU algorithm: cutoff radius (the distance which the particles
+are far enough apart to neglect the force between them) and the
+use of Newton’s third law (which reduces to a half the number of
+forces calculated) <br>
+All the algorithms that we created to run on GPU apply the
+same strategy respect the use of available memory spaces in this
+technology: inside the kernel, each thread copies the necessary
+data from global memory to the shared memory. Once the threads
+of a block have finished their work, the results are sent back to the
+global memory. If it is possible, input parameters of functions are
+sent at the constant memory space. <br>
+The main difference between the algorithms for GPU in this
+study, consists in the format of the grid used in each kernel for
+calculate the matrix force.
+                </p>
+                <div id="A" class="visor">
+                    <h2>Algorithm A</h2>
+                    <img src="src/A.gif" alt="">
+                    <p>
+                        Algorithm A uses a 1D grid with 1D blocks, using a single thread to 
+                        reduce a complete row in the matrix of forces, applying only the 
+                        cutting radius optimization.
+                    </p>
+                </div>
+                <div id="Ae" class="visor">
+                    <h2>Algorithm A*</h2>
+                    <img src="src/Ae.gif" alt="">
+                    <p>
+                        Algorithm A* uses a technique that 
+consists by using the same grid as many times are necessary (block-stride technique), 
+allowing to send a smaller grid to avoid the problem of thread limits.
+                    </p>
+                </div>
+                <div id="B" class="visor">
+                    <h2>Algorithm B</h2>
+                    <img src="src/B.gif" alt="">
+                    <p>
+                        Algorithm B uses a 2D grid with 2D blocks, using one row
+of threads of each block to work on reducing two complete rows
+of the matrix force, applying the cutting radius optimization and the Newton’s third law optimizations.
+                    </p>
+                </div>
+                <div id="Be" class="visor">
+                    <h2>Algorithm B*</h2>
+                    <img src="src/Be.gif" alt="">
+                    <p>
+        Algorithm B* uses a technique that 
+consists by using the same grid as many times are necessary (block-stride technique), 
+allowing to send a smaller grid to avoid the problem of thread limits. <br>
+In this case, was possible to apply the cutting radius and the Newton’s third law optimizations.
+                    </p>
+                </div>
+                <div id="C" class="visor">
+                    <h2>Algorithm C</h2>
+                    <img src="src/C.gif" alt="">
+                    <p>
+                        Algorithm C reuses the idea of algorithm A*, but for a 1D
+grid with 2D blocks, using one row of threads of each block to
+work on reducing a complete row of the matrix force.
+                    </p>
+                </div>
+                <div id="D" class="visor">
+                    <h2>Algorithm D</h2>
+                    <img src="src/D.gif" alt="">
+                    <p>
+                        Algorithm D, in experimental stage, uses an identical grid
+from the algorithm C, but the blocks were programmed to go
+through the matrix force in a staggered way, with the aim of taking advantage of Newton’s third 
+law as optimization.
+                    </p>
+                </div>
+                <div id="coolbtncontainer">
+                    <strong>Choose an algorithm: </strong>
+                    <div>
+                        <button id="btnA" class="coolbtn" type="button">A</button>
+                        <button id="btnAe" class="coolbtn" type="button">A*</button>
+                        <button id="btnB" class="coolbtn" type="button">B</button>
+                    </div>
+                    <div>
+                        <button id="btnBe" class="coolbtn" type="button">B*</button>
+                        <button id="btnC" class="coolbtn" type="button">C</button>
+                        <button id="btnD" class="coolbtn" type="button">D</button>
+                    </div>
+                </div>
+            </div>
+            <div id="seccion6">
+                <div>
+                    <img src="src/results.png" alt="">
+                </div>
+                <div>
+                    <h1>Results and conclusions</h1>
+                    <p>
+                        The comparison showed that algorithms that use the block
+stride technique are more efficient than those that do not. Our
+implementation of Newton’s third law as optimization to calculate the matrix force on GPU, 
+achieves an evident advantage in systems with a large number of particles
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <h1>References</h1>
+            <ul>
+                <li>Allen, M. P. and Tildesley, D.J., <em>Computer Simulation of
+                    Liquids</em>, first ed., Oxford University Press, New York, 1987.</li>
+                <li>Satoh, A., <em>Introduction to Practice of Molecular Simulations</em>, first ed., Elsevier Science Publishing Co. Inc , New
+                    York, 2010.</li>
+                <li>
+                    Wilt, N., <em>The CUDA Handbook. A Comprehensive Guide to GPU Programming</em>, first ed., Pearson Education Inc., New Jersey, 2013.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
+
+
+
